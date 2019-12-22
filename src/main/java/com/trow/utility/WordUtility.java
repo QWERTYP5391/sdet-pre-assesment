@@ -1,6 +1,6 @@
-package com.utility;
+package com.trow.utility;
 
-import com.model.WordResult;
+import com.trow.model.WordResult;
 
 public class WordUtility {
 

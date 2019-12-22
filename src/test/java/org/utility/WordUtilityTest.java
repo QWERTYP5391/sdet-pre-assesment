@@ -1,7 +1,7 @@
 package org.utility;
 
-import com.model.WordResult;
-import com.utility.WordUtility;
+import com.trow.model.WordResult;
+import com.trow.utility.WordUtility;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
