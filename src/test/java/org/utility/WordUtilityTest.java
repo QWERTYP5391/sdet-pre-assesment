@@ -20,11 +20,11 @@ public class WordUtilityTest {
         assertThat(result.getWord(), equalTo(expected.getWord()));
         assertThat(result.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result1 = WordUtility.findLongestWord(TEST_SENTENCE, WordUtility.DEFAULT_PUNCTUATION);
+        WordResult result1 = WordUtility.findLongestWord(TEST_SENTENCE, WordUtility.WORD_DIVIDER);
         assertThat(result1.getWord(), equalTo(expected.getWord()));
         assertThat(result1.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result2 = WordUtility.findLongestWord(TEST_SENTENCE.split(WordUtility.DEFAULT_PUNCTUATION));
+        WordResult result2 = WordUtility.findLongestWord(TEST_SENTENCE.split(WordUtility.WORD_DIVIDER));
         assertThat(result2.getWord(), equalTo(expected.getWord()));
         assertThat(result2.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
     }
@@ -37,11 +37,11 @@ public class WordUtilityTest {
         assertThat(result.getWord(), equalTo(expected.getWord()));
         assertThat(result.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result1 = WordUtility.findLongestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS, WordUtility.DEFAULT_PUNCTUATION);
+        WordResult result1 = WordUtility.findLongestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS, WordUtility.WORD_DIVIDER);
         assertThat(result1.getWord(), equalTo(expected.getWord()));
         assertThat(result1.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result2 = WordUtility.findLongestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS.split(WordUtility.DEFAULT_PUNCTUATION));
+        WordResult result2 = WordUtility.findLongestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS.split(WordUtility.WORD_DIVIDER));
         assertThat(result2.getWord(), equalTo(expected.getWord()));
         assertThat(result2.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
     }
@@ -55,11 +55,11 @@ public class WordUtilityTest {
         assertThat(result.getWord(), equalTo(expected.getWord()));
         assertThat(result.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result1 = WordUtility.findShortestWord(TEST_SENTENCE, WordUtility.DEFAULT_PUNCTUATION);
+        WordResult result1 = WordUtility.findShortestWord(TEST_SENTENCE, WordUtility.WORD_DIVIDER);
         assertThat(result1.getWord(), equalTo(expected.getWord()));
         assertThat(result1.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result2 = WordUtility.findShortestWord(TEST_SENTENCE.split(WordUtility.DEFAULT_PUNCTUATION));
+        WordResult result2 = WordUtility.findShortestWord(TEST_SENTENCE.split(WordUtility.WORD_DIVIDER));
         assertThat(result2.getWord(), equalTo(expected.getWord()));
         assertThat(result2.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
     }
@@ -72,11 +72,11 @@ public class WordUtilityTest {
         assertThat(result.getWord(), equalTo(expected.getWord()));
         assertThat(result.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result1 = WordUtility.findShortestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS, WordUtility.DEFAULT_PUNCTUATION);
+        WordResult result1 = WordUtility.findShortestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS, WordUtility.WORD_DIVIDER);
         assertThat(result1.getWord(), equalTo(expected.getWord()));
         assertThat(result1.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
 
-        WordResult result2 = WordUtility.findShortestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS.split(WordUtility.DEFAULT_PUNCTUATION));
+        WordResult result2 = WordUtility.findShortestWord(TEST_SENTENCE_WITH_SPECIAL_CHARACTERS.split(WordUtility.WORD_DIVIDER));
         assertThat(result2.getWord(), equalTo(expected.getWord()));
         assertThat(result2.getLengthOfWord(), equalTo(expected.getLengthOfWord()));
     }
@@ -97,12 +97,12 @@ public class WordUtilityTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negative_FindLongestWordWithNullSentenceAndValidPunctuation() {
-        WordUtility.findLongestWord(null, WordUtility.DEFAULT_PUNCTUATION);
+    public void negative_FindLongestWordWithNullSentenceAndValidWordDivider() {
+        WordUtility.findLongestWord(null, WordUtility.WORD_DIVIDER);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negative_FindLongestWordWithValidSentenceAndNullPunctuation() {
+    public void negative_FindLongestWordWithValidSentenceAndNullWordDivider() {
         WordUtility.findLongestWord(TEST_SENTENCE, null);
     }
 
@@ -122,12 +122,12 @@ public class WordUtilityTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negative_FindShortestWordWithNullSentenceAndValidPunctuation() {
-        WordUtility.findShortestWord(null, WordUtility.DEFAULT_PUNCTUATION);
+    public void negative_FindShortestWordWithNullSentenceAndValidWordDivider() {
+        WordUtility.findShortestWord(null, WordUtility.WORD_DIVIDER);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negative_FindShortestWordWithValidSentenceAndNullPunctuation() {
+    public void negative_FindShortestWordWithValidSentenceAndNullWordDivider() {
         WordUtility.findShortestWord(TEST_SENTENCE, null);
     }
 

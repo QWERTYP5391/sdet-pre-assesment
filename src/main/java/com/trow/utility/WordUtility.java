@@ -4,7 +4,7 @@ import com.trow.model.WordResult;
 
 public class WordUtility {
 
-    public static final String DEFAULT_PUNCTUATION = "[^A-Za-z]";
+    public static final String WORD_DIVIDER = "[^A-Za-z]";
 
     private WordUtility() {
         //This is a utility class
@@ -20,26 +20,26 @@ public class WordUtility {
         if (sentence == null || sentence.length() == 0) {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
-        String[] words = sentence.split(DEFAULT_PUNCTUATION);
+        String[] words = sentence.split(WORD_DIVIDER);
         String longestWord = getLongestWord(words);
         return new WordResult(longestWord);
     }
 
     /**
-     * This method finds the longest word in a sentence with custom punctuation.
+     * This method finds the longest word in a sentence with custom wordDivider.
      *
      * @param sentence    The input sentence
-     * @param punctuation The custom punctuation
+     * @param wordDivider The custom wordDivider
      * @return The longest word result
      */
-    public static WordResult findLongestWord(String sentence, String punctuation) {
+    public static WordResult findLongestWord(String sentence, String wordDivider) {
         if (sentence == null || sentence.length() == 0) {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
-        if (punctuation == null) {
-            throw new IllegalArgumentException("Punctuation cannot be null");
+        if (wordDivider == null) {
+            throw new IllegalArgumentException("Word Divider cannot be null");
         }
-        String[] words = sentence.split(punctuation);
+        String[] words = sentence.split(wordDivider);
         String longestWord = getLongestWord(words);
         return new WordResult(longestWord);
     }
@@ -67,7 +67,7 @@ public class WordUtility {
         if (sentence == null || sentence.length() == 0) {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
-        String[] words = sentence.split(DEFAULT_PUNCTUATION);
+        String[] words = sentence.split(WORD_DIVIDER);
         String shortestWord = getShortestWord(words);
         return new WordResult(shortestWord);
     }
@@ -76,17 +76,17 @@ public class WordUtility {
      * This method finds the shortest word in a sentence.
      *
      * @param sentence    The input sentence
-     * @param punctuation the custom punctuation
+     * @param wordDivider the custom wordDivider
      * @return The shortest word result
      */
-    public static WordResult findShortestWord(String sentence, String punctuation) {
+    public static WordResult findShortestWord(String sentence, String wordDivider) {
         if (sentence == null || sentence.length() == 0) {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
-        if (punctuation == null) {
-            throw new IllegalArgumentException("Punctuation cannot be null");
+        if (wordDivider == null) {
+            throw new IllegalArgumentException("Word Divider cannot be null");
         }
-        String[] words = sentence.split(punctuation);
+        String[] words = sentence.split(wordDivider);
         String shortestWord = getShortestWord(words);
         return new WordResult(shortestWord);
     }
