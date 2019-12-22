@@ -37,7 +37,7 @@ public class WordUtility {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
         if (punctuation == null) {
-            throw new IllegalArgumentException("Punctuation cannot be null or empty");
+            throw new IllegalArgumentException("Punctuation cannot be null");
         }
         String[] words = sentence.split(punctuation);
         String longestWord = getLongestWord(words);
@@ -84,7 +84,7 @@ public class WordUtility {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
         if (punctuation == null) {
-            throw new IllegalArgumentException("Punctuation cannot be null or empty");
+            throw new IllegalArgumentException("Punctuation cannot be null");
         }
         String[] words = sentence.split(punctuation);
         String shortestWord = getShortestWord(words);
