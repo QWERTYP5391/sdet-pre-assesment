@@ -4,7 +4,7 @@ import com.trow.model.WordResult;
 
 public class WordUtility {
 
-    public static String defaultPunctuation = "[^A-Za-z]";
+    public static final String DEFAULT_PUNCTUATION = "[^A-Za-z]";
 
     private WordUtility() {
         //This is a utility class
@@ -20,7 +20,7 @@ public class WordUtility {
         if (sentence == null || sentence.length() == 0) {
             throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
-        String[] words = sentence.split(defaultPunctuation);
+        String[] words = sentence.split(DEFAULT_PUNCTUATION);
         String longestWord = getLongestWord(words);
         return new WordResult(longestWord);
     }
@@ -67,7 +67,7 @@ public class WordUtility {
         if (sentence == null || sentence.length() == 0) {
             throw new IllegalArgumentException("Input cannot be null or empty");
         }
-        String[] words = sentence.split(defaultPunctuation);
+        String[] words = sentence.split(DEFAULT_PUNCTUATION);
         String shortestWord = getShortestWord(words);
         return new WordResult(shortestWord);
     }
