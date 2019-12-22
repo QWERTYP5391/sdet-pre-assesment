@@ -65,7 +65,7 @@ public class WordUtility {
      */
     public static WordResult findShortestWord(String sentence) {
         if (sentence == null || sentence.length() == 0) {
-            throw new IllegalArgumentException("Input cannot be null or empty");
+            throw new IllegalArgumentException("Sentence cannot be null or empty");
         }
         String[] words = sentence.split(DEFAULT_PUNCTUATION);
         String shortestWord = getShortestWord(words);
