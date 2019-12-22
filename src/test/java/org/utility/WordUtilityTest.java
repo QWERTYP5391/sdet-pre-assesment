@@ -97,7 +97,7 @@ public class WordUtilityTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negative_FindLongestWordWithNullAndValidPunctuation() {
+    public void negative_FindLongestWordWithNullSentenceAndValidPunctuation() {
         WordUtility.findLongestWord(null, WordUtility.defaultPunctuation);
     }
 
@@ -122,7 +122,7 @@ public class WordUtilityTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void negative_FindShortestWordWithNullAndValidPunctuation() {
+    public void negative_FindShortestWordWithNullSentenceAndValidPunctuation() {
         WordUtility.findShortestWord(null, WordUtility.defaultPunctuation);
     }
 
